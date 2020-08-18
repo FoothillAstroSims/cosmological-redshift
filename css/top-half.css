@@ -1,0 +1,98 @@
+#topHalf {
+    background-color: black;
+    height: 280px;
+    width: 920px;
+    margin-bottom: 10px;
+}
+
+#chart {
+    width: 570px;
+    height: 280px;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#legend {
+    border: 1px solid teal;
+    border-radius: 5px;
+    width: 160px;
+}
+
+.legendAndText {
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 160px;
+    max-width: 160px;
+    max-height: 280px;
+    display: inline-block;
+}
+
+.animationSlider {
+    display: inline-block;
+    width: 155px;
+    height: 250px;
+    max-height: 280px;
+
+    vertical-align: top;
+    position: relative;
+    top: 20px;
+}
+
+#animationSpeedText {
+    color: darkgoldenrod;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#animationSpeedTextLineTwo {
+    color: darkgoldenrod;
+    text-align: center;
+}
+
+#animationSliderRange {
+    width: 170px;
+    height: 20px;
+    position: relative;
+    left: 70px;
+    top: 10px;
+
+    transform-origin: 75px 75px;
+    transform: rotate(-90deg);
+}
+
+.legendText {
+    fill: darkmagenta;
+}
+
+.graphTitleText {
+    color: chocolate;
+    text-align: center;
+    width: 570px;
+    height: 28px;
+}
+
+.yAxis line,
+.yAxis path,
+.yAxis text,
+.xAxis line,
+.xAxis path,
+.xAxis text
+{
+   stroke: aqua;
+}
+
+.axisLabelText {
+    fill: chartreuse;
+}
+
+.timeElapsed {
+    margin-top: 15px;
+    height: 100px;
+}
+
+.timeText {
+    color: #64d390;
+    margin-bottom: 0;
+    text-align: center;
+}

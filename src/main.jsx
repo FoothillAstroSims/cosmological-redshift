@@ -71,26 +71,12 @@ class CosmologicalRedshiftSim extends React.Component {
             />
 
             <div id={"topHalf"}>
-                <Chart
-                    lightValues={this.state.lightTravelledDistances}
-                    targetDistances={this.state.targetDistances}
-                    lightDistances={this.state.lightDistances}
-                    times={this.state.times}
-                />
-
-                <Legend />
-
-                <div className={"timeElapsed"}>
-                    <p id={"timeElapsedText"}>Time Elapsed: </p>
-                    <p id={"timeElapsedNumber"}>{this.getTimeElapsed()}</p>
-                    <p id={"timeUnits"}>Billions of Years</p>
-                </div>
-
                 <div className="animationSlider">
                     <h6  id="animationSpeedText">Animation </h6>
                     <h6  id="animationSpeedTextLineTwo">Speed</h6>
                     <input
                         type="range"
+                        id="animationSliderRange"
                         min={1}
                         max={100}
                         step={1}
@@ -99,6 +85,22 @@ class CosmologicalRedshiftSim extends React.Component {
                     />
                 </div>
 
+                <Chart
+                    lightValues={this.state.lightTravelledDistances}
+                    targetDistances={this.state.targetDistances}
+                    lightDistances={this.state.lightDistances}
+                    times={this.state.times}
+                />
+
+                <div className="legendAndText">
+                    <Legend />
+
+                    <div className={"timeElapsed"}>
+                        <p className={"timeText"}>Time Elapsed: </p>
+                        <p className={"timeText"}>{this.getTimeElapsed()}</p>
+                        <p className={"timeText"}>Billions of Years</p>
+                    </div>
+                </div>
             </div>
 
             <div id={"dynamicBackground"}>
@@ -113,16 +115,11 @@ class CosmologicalRedshiftSim extends React.Component {
                 />
             </div>
 
-            <div className={"bottomSettings"}>
-                <div className="animationButton">
-                    <button type="box"
-                            className="btn btn-danger btn-sm"
-                            onClick={this.onStartClick.bind(this)}>
-                        {this.state.startBtnText}
-                    </button>
-                </div>
+            <div className={"bottom-half"}>
 
                 <div className="parameters">
+                    <h4 id="parameterText">Parameters</h4>
+
                     <Parameters
                         params={this.state.parameters}
                         onChange={this.handleNewParameters.bind(this)}
@@ -133,41 +130,35 @@ class CosmologicalRedshiftSim extends React.Component {
                     />
                 </div>
 
-                <div className={"units"}>
-                    <p id={"separationUnits"}>Billion Light Years</p>
-                    <p id={"expansionUnits"}>% per Billion Years</p>
-                </div>
-
-                <div className="survey">
-                    <a href="https://tinyurl.com/yd4n28bx"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        <button type="button" className="btn btn-warning">Give us feedback!</button>
-                    </a>
-                </div>
 
                 <div className={"criticalValues"}>
-                    <p id={"wavelengthText"}>Wavelength:</p>
-                    <p id={"wavelengthValue"}>{this.state.wavelength.toFixed(0)} nm</p>
-                    <p id={"redShiftText"}>Redshift Factor (Z):</p>
-                    <p id={"redShiftFactorValue"}>{this.state.redShift.toFixed(1)}</p>
-                    <p id={"hubbleText"}>Hubble Constant:</p>
-                    <p id={"hubbleConstValue"}>{this.state.hubbleConstant.toFixed(0)} km/s / Mpc</p>
+                    <p className={"darkcyan-text"}>Wavelength:</p>
+                    <p className={"darkgoldenrod-text"}>{this.state.wavelength.toFixed(0)} nm</p>
+                    <p className={"darkcyan-text"}>Redshift Factor (Z):</p>
+                    <p className={"darkgoldenrod-text"}>{this.state.redShift.toFixed(1)}</p>
+                    <p className={"darkcyan-text"}>Hubble Constant:</p>
+                    <p className={"darkgoldenrod-text"}>{this.state.hubbleConstant.toFixed(0)} km/s / Mpc</p>
                 </div>
+
+                <div className="animation-and-survey-btns">
+                    <div className="animationButton">
+                        <button type="box"
+                                className="btn btn-danger btn-sm"
+                                onClick={this.onStartClick.bind(this)}>
+                            {this.state.startBtnText}
+                        </button>
+                    </div>
+
+                    <div className="survey">
+                        <a href="https://tinyurl.com/yd4n28bx"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <button type="button" className="btn btn-warning">Give us feedback!</button>
+                        </a>
+                    </div>
+                </div>
+
             </div>
-
-
-            {/*<div>*/}
-            {/*    <input type="checkbox"*/}
-            {/*           onChange={this.changeAutoPause.bind(this)}*/}
-            {/*           checked={this.state.autoPause}*/}
-            {/*           id="auto-pause-checkbox"*/}
-            {/*    />*/}
-            {/*    <label className="" htmlFor="auto-pause-checkbox" id="auto-pause-text">*/}
-            {/*        Autopause*/}
-            {/*    </label>*/}
-            {/*</div>*/}
-
         </React.Fragment>;
     }
 
@@ -277,7 +268,7 @@ class CosmologicalRedshiftSim extends React.Component {
         let initSeparation = getScaledInitialSeparation(this.state.parameters.initialSeparationDistance,
             this.state.distanceBetweenBodies);
 
-        let xPositionEarth = CENTER_X + distanceFromCenter - sizeShift;
+        let xPositionEarth;
         if (!(distanceFromCenter > CENTER_X - 40)) {
             xPositionEarth = CENTER_X + distanceFromCenter - sizeShift;
         } else {
@@ -327,11 +318,6 @@ class CosmologicalRedshiftSim extends React.Component {
 
             simulationStarted: true,
 
-            // targetDistances: this.state.targetDistances,
-            // lightDistances: this.state.lightDistances,
-            // lightTravelledDistances: this.state.lightTravelledDistances,
-            // times: this.state.times,
-
             index: this.state.index + speedOfAnimation,
             simulationEnded: simulationWillComplete,
             wavelength: wv,
@@ -359,12 +345,11 @@ class CosmologicalRedshiftSim extends React.Component {
             let incrementX = star.deltaX * speedOfConvergence;
             let incrementY = star.deltaY * speedOfConvergence;
             let incrementRadius = (1 - (distToCenter / 1100)) * speedOfConvergence / 35;
-            // let rad = (1 -)
-            // let incrementRadius = (1 - (distToCenter / 1100)) * speedOfConvergence / 20;
 
             circleX -= incrementX;
             circleY -= incrementY;
             radius -= incrementRadius;
+
             // Make sure radius isn't negative or it'll throw an error
             radius = radius < 0 ? 0 : radius;
 
@@ -547,7 +532,6 @@ class CosmologicalRedshiftSim extends React.Component {
 
 
         // Let the intensity fall off near the vision limits
-
         let factor = 0;
         if (w >= 380 && w < 420)
             factor = 0.3 + 0.7*(w - 380) / (420 - 380);

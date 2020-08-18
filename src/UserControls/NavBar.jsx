@@ -9,7 +9,7 @@ export default class NavBar extends React.Component {
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-md navbar-light d-flex justify-content-between">
-                    <span className="navbar-brand mb-0 text-light h1">Cosmological Redshift Simulator</span>
+                    <span className="navbar-brand mb-0 text-light h1"> <a href="https://foothill.edu/astronomy/astrosims.html">AstroSims</a> > Cosmological Redshift Simulator</span>
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <a className="nav-link text-light" href="#" onClick={this.props.onResetClick}>Reset</a>

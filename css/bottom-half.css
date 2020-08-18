@@ -1,0 +1,122 @@
+.bottom-half {
+    background-color: black;
+    margin-top: 10px;
+
+    height: 150px;
+    min-height: 150px;
+
+    width: 920px;
+    min-width: 920px;
+}
+
+.parameters {
+    display: inline-block;
+    vertical-align: top;
+
+    width: 600px;
+    min-width: 600px;
+
+    height: 150px;
+    min-height: 150px;
+}
+
+.criticalValues {
+    display: inline-block;
+
+    margin-top: 3px;
+    width: 150px;
+    min-width: 150px;
+
+    height: 145px;
+    min-height: 145px;
+
+    border: 1px solid brown;
+}
+
+.animation-and-survey-btns {
+    vertical-align: top;
+    display: inline-block;
+
+    width: 170px;
+    min-width: 170px;
+
+    height: 150px;
+    min-height: 150px;
+}
+
+.input-row {
+    display: inline-block;
+}
+
+#parameterText {
+    color: deeppink;
+    width: 600px;
+    height: 28px;
+    position: relative;
+    left: 55px;
+    top: 10px;
+    margin-bottom: 10px;
+}
+
+.darkcyan-text {
+    text-align: center;
+    color: darkcyan;
+    margin-bottom: -5px;
+}
+
+.darkgoldenrod-text {
+    text-align: center;
+    color: darkgoldenrod;
+    margin-bottom: 5px;
+}
+
+.separation-units {
+    margin-left: 15px;
+    color: #64d390;
+}
+
+.units-text {
+    color: maroon;
+    margin-left: 7px;
+}
+
+#expansionInput {
+    margin-left: 20px;
+}
+
+#separationInput {
+    margin-left: 10px;
+}
+
+#separationSlider {
+    position: relative;
+    top: 6px;
+    left: 20px;
+    width: 130px;
+}
+
+#expansionSlider {
+    position: relative;
+    top: 6px;
+    left: 15px;
+    width: 130px;
+}
+
+
+.animationButton {
+    position: relative;
+    top: 10px;
+    left: 30px;
+}
+
+.survey {
+    position: relative;
+    top: 70px;
+    left: 6px;
+}
+
+.single-input-row {
+    margin-bottom: -15px;
+    width: 600px;
+    height: 56px;
+}
