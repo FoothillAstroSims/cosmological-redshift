@@ -29,7 +29,9 @@ export default class Parameters extends React.Component {
                     decimals={2}
                     value={this.props.params.initialSeparationDistance}
                     onChange={this.handleSingleVariableChange}
-                    backgroundColors={this.props.backgroundColors}
+                    //backgroundColors={this.props.backgroundColors}
+                    //textColor={'white'}
+                    //backgroundColors={'red'}
                 />
 
                 <SingleVariableControl
@@ -45,7 +47,7 @@ export default class Parameters extends React.Component {
                     decimals={2}
                     value={this.props.params.expansionRate}
                     onChange={this.handleSingleVariableChange}
-                    backgroundColors={this.props.backgroundColors}
+                    //backgroundColors={this.props.backgroundColors}
                 />
             </div>
         )
@@ -75,8 +77,8 @@ export default class Parameters extends React.Component {
         }
 
         // If they're trying to change initial separation distance after the simulation has started
-        alert("You can't change the INITIAL Separation Distance after starting the simulation, silly." +
-            " Hit reset and give it another go");
+        alert("You can't change the INITIAL Separation Distance after starting the simulation." +
+            " Hit reset to try again");
     }
 }
 
