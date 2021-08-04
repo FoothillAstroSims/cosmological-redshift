@@ -19,7 +19,7 @@ export default class SingleVariableControl extends React.Component {
         return (
             <div className="single-input-row">
                 <div className="input-row">
-                    <p className="separation-units">{this.props.displayName}</p>
+                    <p className="separation-units" style={{color:'white'}}>{this.props.displayName}</p>
                 </div>
                 <div className="input-row">
                     <NumberInputField
@@ -36,7 +36,7 @@ export default class SingleVariableControl extends React.Component {
                     />
                 </div>
                 <div className="input-row">
-                    <p className="units-text">{this.props.units}</p>
+                    <p className="units-text" style={{color:'white'}}>{this.props.units}</p>
                 </div>
                 <div className="input-row">
                     <input
