@@ -20,12 +20,13 @@ export default class Legend extends React.Component{
                         y="0"
                         fontSize=".8em"
                         className="legendText"
-                        textAnchor="end">
-                        <tspan x="150" dy="1.9em">Separation Distance</tspan>
-                        <tspan x="140" dy="4.0em">Distance Travelled</tspan>
-                        <tspan x="85" dy="1.0em">By Light</tspan>
-                        <tspan x="140" dy="3.1em">Distance Between</tspan>
-                        <tspan x="125" dy="1.2em">Light and Earth</tspan>
+                        textAnchor="end"
+                        color="white">
+                        <tspan x="150" dy="1.9em" fill="currentcolor">Separation Distance</tspan>
+                        <tspan x="140" dy="4.0em" fill="currentcolor">Distance Travelled</tspan>
+                        <tspan x="85" dy="1.0em" fill="currentcolor">By Light</tspan>
+                        <tspan x="140" dy="3.1em" fill="currentcolor">Distance Between</tspan>
+                        <tspan x="125" dy="1.2em" fill="currentcolor">Light and Earth</tspan>
                     </text>
 
                     <line x1={5} y1={20} x2={30} y2={20} style={{stroke: "green", strokeWidth: "2.5"}} />
